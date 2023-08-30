@@ -1,26 +1,167 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: rgb(255, 223, 230);
+  height: 100%;
+}
+
+.section.header {
+  position: relative;
+}
+
+.header-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.header-body {
+  position: absolute;
   box-sizing: border-box;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  width: 100%;
+  text-align: center;
+  top: 30%;
+  padding: 30px 10px;
+  z-index: 1;
 }
 
-/* Mobile styles */
-@media only screen and (max-width: 400px) {
-  body {
-    background-color: #F09A9D; /* Red */
+.header-logo {
+  font-size: 4em;
+  line-height: 0.9em;
+}
+
+.section.text {
+  background-color: rgb(255, 218, 218);
+  padding-left: 40px;
+}
+
+.sign-up {
+  background-color: rgb(204, 255, 211);
+  position: relative;
+}
+
+.sign-up-form-bg {
+  width: 100%;
+  background-color: rgb(246, 199, 255);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.sign-up-form {
+  box-sizing: border-box;
+  /* background-color: rgb(255, 205, 193); */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px 100px;
+  max-width: 550px;
+  padding-left: 40px;
+}
+
+.form-item {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  /* max-width: 200px; */
+  flex: 0 0 200px;
+}
+
+.form-item > input {
+  background-color: #FFFFFF;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  padding: 7px;
+  font-size: 14px;
+}
+
+/* Mobile */
+@media only screen and (max-width: 520px) {
+  .page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .section.header {
+    background-color: rgb(220, 255, 220);
+    height: 300px;
+  }
+
+  .header-logo {
+    font-size: 10vw;
+  }
+
+  .header-tagline {
+    font-size: 4vw;
+  }
+  
+  .section.content {
+    background-color: rgb(217, 217, 255);
+    min-height: 100vh;
   }
 }
 
-/* Tablet styles */
-@media only screen and (min-width: 401px) and (max-width: 960px) {
-  body {
-    background-color: #F5CF8E; /* Yellow */
+/* Tablet */
+@media only screen and (min-width: 521px) and (max-width: 960px) {
+  .page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .section.header {
+    background-color: rgb(220, 255, 220);
+    height: 300px;
+  }
+
+  .header-logo {
+    font-size: 8vw;
+  }
+
+  .header-tagline {
+    font-size: 3vw;
+  }
+  
+  .section.content {
+    background-color: rgb(217, 217, 255);
+    min-height: 100vh;
   }
 }
 
-/* Desktop styles */
+/* Desktop */
 @media only screen and (min-width: 961px) {
-  body {
-    background-color: #B2D6FF; /* Blue */
+  .page {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+  }
+  
+  .section.header {
+    background-color: rgb(220, 255, 220);
+    min-height: 100%;
+    width: 40%;
+  }
+
+  .header-logo {
+    font-size: 4.7vw;
+  }
+
+  .header-tagline {
+    font-size: 1.4vw;
+  }
+  
+  .section.content {
+    background-color: rgb(217, 217, 255);
+    min-height: 100%;
+    width: 100vw;
   }
 }
