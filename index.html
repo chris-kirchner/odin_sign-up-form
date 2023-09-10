@@ -33,35 +33,40 @@
         <form action="#" method="get" class="sign-up-form">
           <div class="form-item">
             <label for="first-name">First Name</label>
-            <input type="text" id="first-name" name="first-name" placeholder=" " pattern="^[a-zA-z., ]+">
+            <input type="text" id="first-name" name="first-name" placeholder="" pattern="^[a-zA-z., ]+">
           </div>
           <div class="form-item">
             <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" name="last-name" placeholder=" " pattern="^[a-zA-z., ]+">
+            <input type="text" id="last-name" name="last-name" placeholder="" pattern="^[a-zA-z., ]+">
           </div>
           <div class="form-item">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder=" ">
+            <input type="email" id="email" name="email" placeholder="">
+            <p class="feedback" id="email-feedback">feedback</p>
           </div>
           <div class="form-item">
             <label for="phone-number">Phone Number</label>
-            <input type="tel" id="phone-number" name="phone-number" placeholder=" ">
+            <input type="tel" id="phone-number" name="phone-number" placeholder="" pattern="^(\+\d{1,2}\s?)?[\s.\-]?\(?\d{3}\)?[\s.\-]?\d{3}[\s.\-]?\d{4}$">
+            <p class="feedback" id="phone-number-feedback">feedback</p>
           </div>
           <div class="form-item">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder=" ">
+            <input type="password" id="password" name="password" placeholder="" minlength="3">
+            <p class="feedback" id="password-feedback">feedback</p>
           </div>
           <div class="form-item">
             <label for="password-confirm">Confirm Password</label>
-            <input type="password" id="password-confirm" name="password-confirm" placeholder=" ">
+            <input type="password" id="password-confirm" name="password-confirm" placeholder="" minlength="3">
+            <p class="feedback" id="password-confirm-feedback">feedback</p>
           </div>
         </form>
       </div>
       <div class="section sign-up-submit">
-        <button type="submit">Create Account</button>
+        <button type="submit" id="button-create-account" disabled>Create Account</button>
         <p>Already have an account? <span><a href="#">Log in</a></span></p>
       </div>
     </div>
   </div>
+  <script src="./script.js"></script>
 </body>
 </html>
