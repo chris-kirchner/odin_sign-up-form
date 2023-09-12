@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
@@ -15,6 +14,22 @@ body {
 .section.header {
   position: relative;
   z-index: 1;
+}
+
+.credit {
+  position: relative;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.3em;
+  white-space: nowrap;
+  top: 86%;
+  text-shadow: 0px 1px 3px rgb(0, 0, 0);
+}
+
+.credit a {
+  color: rgb(255, 255, 255);
 }
 
 .header-bg {
@@ -52,14 +67,6 @@ body {
   display: flex;
   justify-content: center;
   gap: 4px;
-}
-
-.diamond-svg {
-  /* background-color: rgba(255, 255, 255, 0.479); */
-  /* min-width: 120px;
-  min-height: 120px;
-  max-width: 120px;
-  max-height: 120px; */
 }
 
 .header-company-name {
@@ -113,14 +120,24 @@ body {
   background-color: rgb(250, 249, 248);
   /* background-color: rgb(204, 255, 211); */
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.137);
-  padding: 20px 40px 32px;
+  padding: 20px 40px 20px;
   margin-bottom: 60px;
 }
 
-.sign-up > p {
+.sign-up > p:nth-of-type(1) {
   margin-bottom: 20px;
   font-size: 1.5rem;
   font-weight: 500;
+}
+
+.required {
+  color: rgb(230, 84, 0);
+}
+
+.sign-up > .required-field {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.03rem;
 }
 
 .sign-up-form {
@@ -128,8 +145,9 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 26px 80px;
+  gap: 28px 80px;
   max-width: 560px;
+  margin-bottom: 30px;
 }
 
 .form-item {
@@ -220,6 +238,7 @@ body {
   position: relative;
   /* background-color: #f8ffd1; */
   z-index: 1;
+  margin-bottom: 40px;
 }
 
 .section.sign-up-submit button:disabled {
@@ -240,7 +259,7 @@ body {
   background-color: rgb(230, 84, 0);
   /* background-image: radial-gradient(ellipse at bottom, rgb(255, 234, 115) 10%, rgb(255, 175, 54) 40%, rgb(255, 38, 0)); */
   /* padding: 10px 60px; */
-  margin: 0px 40px 30px 40px;
+  margin: 0px 40px 20px 40px;
   width: 50%;
   max-width: 240px;
   height: 50px;
@@ -356,14 +375,16 @@ body {
   .page {
     display: flex;
     flex-direction: row;
-    min-height: 100vh;
   }
 
   .section.header {
     width: 40vw;
     min-width: 440px;
     min-height: 100vh;
-    height: 100vh;
+  }
+
+  .credit {
+    top: 94%;
   }
   
   .section.content {
