@@ -9,9 +9,10 @@
 <body>
   <div class="page">
     <div class="section header">
-      <div class="header-bg"></div>
-      <!-- <img class="header-bg" src="./images/cristofer-maximilian-uQDRDqpYJHI-unsplash.jpg" alt="background picture"> -->
-      
+      <div id="header-bg" class="header-bg">
+        <p class="credit">Photo by <a href="https://unsplash.com/@cristofer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cristofer Maximilian</a> on <a href="https://unsplash.com/photos/uQDRDqpYJHI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+        <p class="credit">Diamond icon created by <a href="https://perxis.com/">Perxis</a></p>
+      </div>
       <div class="header-logo-container">
         <div class="header-logo-slate"></div>
         <div class="header-logo">
@@ -40,26 +41,27 @@
             <input type="text" id="last-name" name="last-name" placeholder="" pattern="^[a-zA-z., ]+">
           </div>
           <div class="form-item">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="">
-            <p class="feedback" id="email-feedback">feedback</p>
+            <label for="email">Email<span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="" required>
+            <p class="feedback" id="email-feedback"></p>
           </div>
           <div class="form-item">
             <label for="phone-number">Phone Number</label>
             <input type="tel" id="phone-number" name="phone-number" placeholder="" pattern="^(\+\d{1,2}\s?)?[\s.\-]?\(?\d{3}\)?[\s.\-]?\d{3}[\s.\-]?\d{4}$">
-            <p class="feedback" id="phone-number-feedback">feedback</p>
+            <!-- <p class="feedback" id="phone-number-feedback"></p> -->
           </div>
           <div class="form-item">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="" minlength="3">
-            <p class="feedback" id="password-feedback">feedback</p>
+            <label for="password">Password<span class="required">*</span></label>
+            <input type="password" id="password" name="password" placeholder="" minlength="3" required>
+            <p class="feedback" id="password-feedback"></p>
           </div>
           <div class="form-item">
-            <label for="password-confirm">Confirm Password</label>
-            <input type="password" id="password-confirm" name="password-confirm" placeholder="" minlength="3">
-            <p class="feedback" id="password-confirm-feedback">feedback</p>
+            <label for="password-confirm">Confirm Password<span class="required">*</span></label>
+            <input type="password" id="password-confirm" name="password-confirm" placeholder="" minlength="3" required>
+            <p class="feedback" id="password-confirm-feedback"></p>
           </div>
         </form>
+        <p class="required-field"><span class="required">*</span> Required field</p>
       </div>
       <div class="section sign-up-submit">
         <button type="submit" id="button-create-account" disabled>Create Account</button>
