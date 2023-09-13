@@ -27,7 +27,9 @@ password.addEventListener("blur", e => {
     passwordFeedback.style.opacity = "1";
     password.classList.add("invalid");
     passwordConfirm.classList.remove("valid");
+    passwordConfirm.classList.remove("invalid");
     passwordConfirm.classList.add("default");
+    passwordConfirmFeedback.style.opacity = "0";
   }
   else {
     password.classList.add("valid");
@@ -52,16 +54,22 @@ password.addEventListener("blur", e => {
 });
 
 passwordConfirm.addEventListener("blur", e => {
-  if (passwordConfirm.value === "") {
+  if (password.value === "" || password.value.length < 3) {
+    passwordConfirm.classList.remove("invalid");
+    passwordConfirm.classList.remove("valid");
+    passwordConfirm.classList.add("default");
+    passwordConfirmFeedback.style.opacity = "0";
+  }
+  else if (passwordConfirm.value === "") {
     passwordConfirmFeedback.style.opacity = "0";
     // password.classList.remove("valid");
   }
-  else if (passwordConfirm.value.length < 3) {
-    passwordConfirm.classList.add("invalid");
-    passwordConfirmFeedback.innerText = "Password must be at least 3 characters";
-    passwordConfirmFeedback.style.opacity = "1";
-    // password.classList.remove("valid");
-  } 
+  // else if (passwordConfirm.value.length < 3) {
+  //   passwordConfirm.classList.add("invalid");
+  //   passwordConfirmFeedback.innerText = "Password must be at least 3 characters";
+  //   passwordConfirmFeedback.style.opacity = "1";
+  //   password.classList.remove("valid");
+  // } 
   else {
     if (passwordConfirm.value !== password.value) {
       passwordConfirm.classList.add("invalid");
