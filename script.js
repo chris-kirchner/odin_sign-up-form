@@ -25,9 +25,9 @@ password.addEventListener("blur", e => {
   else if (password.value.length < 3) {
     passwordFeedback.innerText = "Password must be at least 3 characters";
     passwordFeedback.style.opacity = "1";
+    password.classList.remove("valid", "default");
     password.classList.add("invalid");
-    passwordConfirm.classList.remove("valid");
-    passwordConfirm.classList.remove("invalid");
+    passwordConfirm.classList.remove("valid", "invalid");
     passwordConfirm.classList.add("default");
     passwordConfirmFeedback.style.opacity = "0";
   }
@@ -35,13 +35,12 @@ password.addEventListener("blur", e => {
     password.classList.add("valid");
     passwordFeedback.style.opacity = "0";
     if (password.value === passwordConfirm.value) {
-      password.classList.add("valid");
-      passwordConfirm.classList.remove("invalid");
+      passwordConfirm.classList.remove("invalid", "default");
       passwordConfirm.classList.add("valid");
       passwordConfirmFeedback.style.opacity = "0";
     }
     else {
-      passwordConfirm.classList.remove("valid");
+      passwordConfirm.classList.remove("valid", "default");
       passwordConfirm.classList.add("invalid");
       passwordConfirmFeedback.innerText = "Password does not match";
       passwordConfirmFeedback.style.opacity = "1";
@@ -55,33 +54,23 @@ password.addEventListener("blur", e => {
 
 passwordConfirm.addEventListener("blur", e => {
   if (password.value === "" || password.value.length < 3) {
-    passwordConfirm.classList.remove("invalid");
-    passwordConfirm.classList.remove("valid");
+    passwordConfirm.classList.remove("valid", "invalid");
     passwordConfirm.classList.add("default");
     passwordConfirmFeedback.style.opacity = "0";
   }
   else if (passwordConfirm.value === "") {
     passwordConfirmFeedback.style.opacity = "0";
-    // password.classList.remove("valid");
   }
-  // else if (passwordConfirm.value.length < 3) {
-  //   passwordConfirm.classList.add("invalid");
-  //   passwordConfirmFeedback.innerText = "Password must be at least 3 characters";
-  //   passwordConfirmFeedback.style.opacity = "1";
-  //   password.classList.remove("valid");
-  // } 
   else {
     if (passwordConfirm.value !== password.value) {
+      passwordConfirm.classList.remove("valid", "default");
       passwordConfirm.classList.add("invalid");
       passwordConfirmFeedback.innerText = "Password does not match";
       passwordConfirmFeedback.style.opacity = "1";
-      // password.classList.remove("valid");
-      // password.classList.add("default");
     } else {
-      passwordConfirm.classList.remove("invalid");
+      passwordConfirm.classList.remove("invalid", "default");
       passwordConfirm.classList.add("valid");
       passwordConfirmFeedback.style.opacity = "0";
-      // password.classList.add("valid");
     }
   };
   buttonState();
