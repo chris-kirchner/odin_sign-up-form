@@ -267,7 +267,7 @@ a {
   text-decoration-color: transparent;
   -webkit-text-decoration-color: transparent;
   -moz-text-decoration-color: transparent;
-  transition: text-decoration-color 0.3s;
+  transition: text-decoration-color 0.4s;
 }
 
 a:hover {
